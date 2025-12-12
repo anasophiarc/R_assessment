@@ -28,3 +28,22 @@ Divided up tasks for analysis:
 # Peer Review 
 - 45 minutes of reconstructing and replicating the other's team's work + giving constructive feedback
 - 15 minutes of reflecting on our own feedback
+
+PROS:
+- Good cleaning practices + well commented cleaning
+- Good making all other values of gender NA
+- Advanced use of dplyr package
+- Completeness
+- Code is reproducible when running in chunks
+- Efficient prevalence calculations 
+
+CONS: 
+- Data shouldn't be on Git
+- Title of script should be more informative (shouldn't have to come over and explain it) 
+- Shouldn't use fields that are not in all datasets OR include a justification
+- Try not to include unrelated files
+- R markdown/discussion is missing and file doesn't knit => having interpretation of resulsts is really important 
+- Would be good to have even more detailed and comments (especially validating the representativeness)
+- Model adjusted prevalence not well explained
+- *Understanding that there was a lack of time :) 
+
