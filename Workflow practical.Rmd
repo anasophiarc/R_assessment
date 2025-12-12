@@ -37,9 +37,11 @@ Q1_data$Sex <- ifelse(
 table(Q1_data$Sex, useNA = "ifany")
 ```
 ```{r}
+setwd("/Users/simonahausleitner/Documents/Cambridge /ConRR/Data Sets")
+
 # Tabulate Birth year by sex 
 Q2_data <- read.xlsx("Q2_data.xlsx")
-xtabs(DOBYear ~ Sex, data = Q2_data)
+xtabs( ~ DOBYear + Sex, data = Q2_data)
 
 ```
 
