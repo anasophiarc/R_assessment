@@ -20,4 +20,5 @@ Divided up tasks for analysis:
 - Must make sure the report contains a step-by-step plan so other teams can replicate our code and analysis 
 
 ## Obstacles + Challenges 
-- using the "here()" command in read.csv(here("data", "myfile.csv")) to ensure that the differing working directories of the team members are aligned and do not need to be changed during each edit 
+- using the "here()" command in read.csv(here("data", "myfile.csv")) to ensure that the differing working directories of the team members are aligned and do not need to be changed during each edit
+- Some of the data set was given verbally during the first session and we needed to type it down; all three of us used Shiny/excel to record the data and then we compared the observations afterward
