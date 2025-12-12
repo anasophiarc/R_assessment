@@ -44,4 +44,24 @@ Q2_data <- read.xlsx("Q2_data.xlsx")
 xtabs( ~ DOBYear + Sex, data = Q2_data)
 
 ```
+```{r}
+setwd("/Users/simonahausleitner/Documents/Cambridge /ConRR/Data Sets")
+
+# Read in the data 
+Q3_data <- read.xlsx("Q3_data.xlsx")
+
+# Clean Sex column 
+Q3_data$Sex <- ifelse(
+  Q3_data$Sex == "M" | Q3_data$Sex == "male" | Q3_data$Sex == "Male",
+  "Male",
+  ifelse(
+    Q3_data$Sex == "F" | Q3_data$Sex == "female" | Q3_data$Sex == "Female",
+    "Female",
+    NA
+  )
+)
+
+# Tabulate 
+xtabs( ~ DOBYear + Sex, data = Q3_data)
+```
 
