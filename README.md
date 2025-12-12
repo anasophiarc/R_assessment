@@ -22,3 +22,5 @@ Divided up tasks for analysis:
 ## Obstacles + Challenges 
 - using the "here()" command in read.csv(here("data", "myfile.csv")) to ensure that the differing working directories of the team members are aligned and do not need to be changed during each edit
 - Some of the data set was given verbally during the first session and we needed to type it down; all three of us used Shiny/excel to record the data and then we compared the observations afterward
+- The time limit added a lot of pressure, similar to an upcoming deadline
+- Due to the time limit, we were unable to produce impactful figures, such as tables or graphs, that could have added to our analysis. 
