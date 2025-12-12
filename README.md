@@ -24,3 +24,7 @@ Divided up tasks for analysis:
 - Some of the data set was given verbally during the first session and we needed to type it down; all three of us used Shiny/excel to record the data and then we compared the observations afterward
 - The time limit added a lot of pressure, similar to an upcoming deadline
 - Due to the time limit, we were unable to produce impactful figures, such as tables or graphs, that could have added to our analysis. 
+
+# Peer Review 
+- 45 minutes of reconstructing and replicating the other's team's work + giving constructuve feedback
+- 15 minutes of reflecting on our own feedback
