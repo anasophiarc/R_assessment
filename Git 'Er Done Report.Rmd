@@ -17,11 +17,12 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 # Report Aims
-# Binomial Regression to assess whether individuals with on-going issues believe their condition will get worse while waiting for treatment
 
-# Assess prevalance of health issues in the cohort; adjusting for other factors
+1. Binomial Regression to assess whether individuals with on-going issues believe their condition will get worse while waiting for treatment
 
-# Assess how representative the sample is compared to the population 
+2. Assess prevalance of health issues in the cohort; adjusting for other factors
+
+3. Assess how representative the sample is compared to the population 
  
 ```{r, echo=FALSE}
 # Load necessary packages
