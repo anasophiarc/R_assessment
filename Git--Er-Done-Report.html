@@ -1776,158 +1776,13 @@ and Smoker.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co"># Change Belief variable to binary code </span></span>
 <span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>merged<span class="sc">$</span>Belief <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(merged<span class="sc">$</span>Belief <span class="sc">==</span> <span class="st">&quot;Y&quot;</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>merged<span class="sc">$</span>Belief <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(merged<span class="sc">$</span>Belief)</span>
-<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>merged</span></code></pre></div>
-<pre><code>##     Age Gender  PH MH Belief Smoker
-## 1    24   &lt;NA&gt;   N  N      0      Y
-## 2    51      M   Y  N      0      Y
-## 3    21     GD   N  N      0      Y
-## 4    42   &lt;NA&gt;   N  Y      0   &lt;NA&gt;
-## 5    47   &lt;NA&gt;   N  Y      1      Y
-## 6    60      F   N  Y      0      Y
-## 7    38   &lt;NA&gt;   N  N      0      Y
-## 8    64      F   N  N      0   &lt;NA&gt;
-## 9    41      F   N  N      1      Y
-## 10   67   PNTS   N  N      1      N
-## 11   74   &lt;NA&gt;   Y  N      0   &lt;NA&gt;
-## 12   66   PNTS   N  N      0      Y
-## 13   52   &lt;NA&gt;   Y  N      1      Y
-## 14   22   &lt;NA&gt;   N  N      0      Y
-## 15   21      F   Y  N      0      Y
-## 16   63      F   N  N      0      Y
-## 17   91      M   N  N      0      Y
-## 18   80      F   N  Y      0      Y
-## 19   35   &lt;NA&gt;   Y  N      0      Y
-## 20   34      F   N  Y      1      N
-## 21   87   &lt;NA&gt;   N  N      0      Y
-## 22   89      F   N  Y      0   &lt;NA&gt;
-## 23   68   &lt;NA&gt;   N  N      0      Y
-## 24   47   &lt;NA&gt;   N  N      0      Y
-## 25   74      F   N  N      1      Y
-## 26   50   PNTS   N  N      1      Y
-## 27   94   &lt;NA&gt;   N  N      0      Y
-## 28   79      F   N  N      1      Y
-## 29   55      M   N  Y      0      N
-## 30   44   &lt;NA&gt;   N  N      1   &lt;NA&gt;
-## 31   42   &lt;NA&gt;   N  Y      0      Y
-## 32   65      M   N  Y      0      Y
-## 33   28      F   N  N      1      Y
-## 34   27      M   N  N      1      Y
-## 35   75      M   N  N      0   &lt;NA&gt;
-## 36   88      F   N  N      0      Y
-## 37   60   &lt;NA&gt;   N  N      0      Y
-## 38   60   PNTS   N  N      0      Y
-## 39   51   &lt;NA&gt;   Y  N      0      Y
-## 40   66   PNTS   Y  N      1   &lt;NA&gt;
-## 41   57   &lt;NA&gt;   N  N      0      N
-## 42   56      F   N  Y      1      Y
-## 43   65      M   Y  Y      0      N
-## 44   19   &lt;NA&gt;   N  Y      0      Y
-## 45   95   &lt;NA&gt;   N  Y      0      Y
-## 46   59      M   Y  Y      0      Y
-## 47   91   &lt;NA&gt;   N  N      1      Y
-## 48   40      F   N  Y      0      N
-## 49   20      F   N  N      0      Y
-## 50   59   &lt;NA&gt;   N  N      1      N
-## 51   42   &lt;NA&gt;   Y  N      0      Y
-## 52   42   &lt;NA&gt;   N  N      1      Y
-## 53   27     GD   Y  Y      0      Y
-## 54   81   &lt;NA&gt;   N  Y      0      Y
-## 55   45      F   Y  Y      1   &lt;NA&gt;
-## 56   58      M   N  N      0   &lt;NA&gt;
-## 57   40   &lt;NA&gt;   N  N      0      N
-## 58   66   &lt;NA&gt;   N  N      1      Y
-## 59   95   &lt;NA&gt;   N  N      0      Y
-## 60   26      F   N  N      0      Y
-## 61   97      F   N  N      1      Y
-## 62    5      M   N  N      0      Y
-## 63    4   &lt;NA&gt;   N  N      1      Y
-## 64    1   &lt;NA&gt;   N  N      1      Y
-## 65    8   &lt;NA&gt;   N  Y      0      Y
-## 66    1   &lt;NA&gt;   N  Y      0      Y
-## 67    8     GD   N  N      1      Y
-## 68    3   &lt;NA&gt;   N  Y      0   &lt;NA&gt;
-## 69    2     GD   N  N      0      Y
-## 70    2      M   N  Y      0      Y
-## 71    7      M   N  N      0      Y
-## 72    6   &lt;NA&gt;   N  Y      0   &lt;NA&gt;
-## 73    3      F   N  N      1   &lt;NA&gt;
-## 74    3      F   N  Y      0      Y
-## 75    7   &lt;NA&gt;   N  Y      0      Y
-## 76    3   &lt;NA&gt;   N  N      1   &lt;NA&gt;
-## 77    5     GD   N  N      0      Y
-## 78    2      F   N  N      0      N
-## 79    7      M   N  N      1      Y
-## 80    2   &lt;NA&gt;   N  Y      0      Y
-## 81    2   &lt;NA&gt;   N  N      0      Y
-## 82    1     GD   N  Y      0      N
-## 83    4      F   N  N      1   &lt;NA&gt;
-## 84    1      M   N  Y      1      N
-## 85    3   PNTS   N  N      1      Y
-## 86    3   &lt;NA&gt;   N  N      0   &lt;NA&gt;
-## 87    3   &lt;NA&gt;   Y  Y      0      Y
-## 88    4      M   N  N      0      Y
-## 89    4   &lt;NA&gt;   N  N      0   &lt;NA&gt;
-## 90    4     GD   N  Y      0      Y
-## 91    1   &lt;NA&gt;   N  Y      0   &lt;NA&gt;
-## 92    4   &lt;NA&gt;   N  Y      0      N
-## 93    4   &lt;NA&gt;   N  Y      1      N
-## 94    3   &lt;NA&gt;   Y  Y      0      Y
-## 95    6      F   N  Y      0      N
-## 96    5      F   N  Y      0      Y
-## 97    8   &lt;NA&gt;   N  N      0   &lt;NA&gt;
-## 98    4      F   N  N      0      Y
-## 99    2   &lt;NA&gt;   Y  Y      1      Y
-## 100  18   &lt;NA&gt;  No  N      0      Y
-## 101  20      F Yes  Y      0      Y
-## 102  95   &lt;NA&gt;  No  N      0   &lt;NA&gt;
-## 103  52   &lt;NA&gt;  No  N      1      Y
-## 104  72      F  No  N      0      N
-## 105  45      M  No  N      0      Y
-## 106  20   &lt;NA&gt;  No  Y      0      Y
-## 107  87   PNTS  No  Y      0   &lt;NA&gt;
-## 108  22      F  No  Y      0   &lt;NA&gt;
-## 109  39      M Yes  N      0      Y
-## 110  43   &lt;NA&gt;  No  N      0      Y
-## 111  25      M  No  N      0      Y
-## 112  49   &lt;NA&gt;  No  N      0      Y
-## 113  47   &lt;NA&gt;  No  Y      1   &lt;NA&gt;
-## 114  20      M Yes  N      0      Y
-## 115  89   &lt;NA&gt;  No  Y      0   &lt;NA&gt;
-## 116  30      M Yes  Y      0      Y
-## 117  59      F  No  N      1   &lt;NA&gt;
-## 118  25   &lt;NA&gt; Yes  N      1      Y
-## 119  77      M Yes  N      1      Y
-## 120  30      M  No  Y      0      Y
-## 121  24      M  No  Y      0      Y
-## 122  35   PNTS  No  N      0      Y
-## 123  64      M  No  N      0   &lt;NA&gt;
-## 124  78   &lt;NA&gt;  No  Y      0      Y
-## 125  91   &lt;NA&gt;  No  N      0      N
-## 126  30   &lt;NA&gt; Yes  N      1      Y
-## 127  40      M   Y  Y      0    yes
-## 128  29   &lt;NA&gt;   Y  N      0    yes
-## 129  51      M   Y  N      0    yes
-## 130  46      F   Y  Y      1     no
-## 131  52      F   N  Y      0    yes
-## 132  NA      M   N  Y      0    yes
-## 133  64   &lt;NA&gt;   Y  Y      1    yes
-## 134  78      M   N  Y      0     no
-## 135  42      M   N  N      0    yes
-## 136  52      F   N  N      0    yes
-## 137  37   &lt;NA&gt;   Y  N      0    yes
-## 138  62      M   N  N      0    yes
-## 139  67   &lt;NA&gt;   N  N      0    yes
-## 140  66      M   N  Y      0    yes
-## 141  50      F   N  Y      1    yes
-## 142  18      F   Y  N      1    yes
-## 143  60      M   Y  N      1    yes
-## 144  40      F   N  N      0     no</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>Binomial_model <span class="ot">&lt;-</span> <span class="fu">glm</span>(</span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>  Belief <span class="sc">~</span> Age <span class="sc">+</span> Gender <span class="sc">+</span> PH <span class="sc">+</span> MH <span class="sc">+</span> Smoker,</span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>  <span class="at">data =</span> merged,</span>
-<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a>  <span class="at">family =</span> binomial</span>
-<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>)</span>
-<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="fu">summary</span>(Binomial_model)</span></code></pre></div>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>Binomial_model <span class="ot">&lt;-</span> <span class="fu">glm</span>(</span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>  Belief <span class="sc">~</span> Age <span class="sc">+</span> Gender <span class="sc">+</span> PH <span class="sc">+</span> MH <span class="sc">+</span> Smoker,</span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>  <span class="at">data =</span> merged,</span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>  <span class="at">family =</span> binomial</span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a>)</span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a><span class="fu">summary</span>(Binomial_model)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## glm(formula = Belief ~ Age + Gender + PH + MH + Smoker, family = binomial, 
@@ -1960,75 +1815,75 @@ and Smoker.</p>
 significant association between belief and outcome. Additionally, none
 of the confounders are significantly associated with belief. # 3.2
 Secondary Analysis</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># To determine the prevalence of a health issue in the cohort, we calculate: </span></span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="co"># Prevalence = number of people with the condition ÷ total number of people in the cohort</span></span>
-<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="co"># Prevalence of PH</span></span>
-<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a><span class="fu">mean</span>(merged<span class="sc">$</span>PH <span class="sc">==</span> <span class="st">&quot;Y&quot;</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co"># To determine the prevalence of a health issue in the cohort, we calculate: </span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="co"># Prevalence = number of people with the condition ÷ total number of people in the cohort</span></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="co"># Prevalence of PH</span></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="fu">mean</span>(merged<span class="sc">$</span>PH <span class="sc">==</span> <span class="st">&quot;Y&quot;</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## [1] 0.1597222</code></pre>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co"># prevalence is 0.1597222 = 15.97%</span></span>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># prevalence is 0.1597222 = 15.97%</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="do">## Check Manually </span></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="co"># Number with condition</span></span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>PHcases <span class="ot">&lt;-</span> <span class="fu">sum</span>(merged<span class="sc">$</span>PH <span class="sc">==</span> <span class="st">&quot;Y&quot;</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="co"># Total cohort size</span></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>total <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(merged<span class="sc">$</span>PH))</span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a><span class="co"># Prevalence</span></span>
+<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a>PHcases <span class="sc">/</span> total</span></code></pre></div>
+<pre><code>## [1] 0.1597222</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co"># prevalence is confirmed as 0.1597222</span></span>
 <span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="do">## Check Manually </span></span>
-<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="co"># Number with condition</span></span>
-<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>PHcases <span class="ot">&lt;-</span> <span class="fu">sum</span>(merged<span class="sc">$</span>PH <span class="sc">==</span> <span class="st">&quot;Y&quot;</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a><span class="co"># Total cohort size</span></span>
-<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a>total <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(merged<span class="sc">$</span>PH))</span>
-<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a><span class="co"># Prevalence</span></span>
-<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a>PHcases <span class="sc">/</span> total</span></code></pre></div>
-<pre><code>## [1] 0.1597222</code></pre>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="co"># prevalence is confirmed as 0.1597222</span></span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="co"># Prevalence of MH</span></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="fu">mean</span>(merged<span class="sc">$</span>MH <span class="sc">==</span> <span class="st">&quot;Y&quot;</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] 0.3819444</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="co"># prevalence is 0.3819444 = 38.19%</span></span>
 <span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a><span class="co"># Prevalence of MH</span></span>
-<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a><span class="fu">mean</span>(merged<span class="sc">$</span>MH <span class="sc">==</span> <span class="st">&quot;Y&quot;</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a><span class="do">## Check Manually </span></span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a><span class="co"># Number with condition</span></span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a>MHcases <span class="ot">&lt;-</span> <span class="fu">sum</span>(merged<span class="sc">$</span>MH <span class="sc">==</span> <span class="st">&quot;Y&quot;</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a><span class="co"># Total cohort size</span></span>
+<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a>total <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(merged<span class="sc">$</span>MH))</span>
+<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a><span class="co"># Prevalence</span></span>
+<span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a>MHcases <span class="sc">/</span> total</span></code></pre></div>
 <pre><code>## [1] 0.3819444</code></pre>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="co"># prevalence is 0.3819444 = 38.19%</span></span>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="co"># prevalence is confirmed as 0.3819444</span></span>
 <span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a></span>
-<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a><span class="do">## Check Manually </span></span>
-<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a><span class="co"># Number with condition</span></span>
-<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a>MHcases <span class="ot">&lt;-</span> <span class="fu">sum</span>(merged<span class="sc">$</span>MH <span class="sc">==</span> <span class="st">&quot;Y&quot;</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a><span class="co"># Total cohort size</span></span>
-<span id="cb16-7"><a href="#cb16-7" tabindex="-1"></a>total <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(merged<span class="sc">$</span>MH))</span>
-<span id="cb16-8"><a href="#cb16-8" tabindex="-1"></a><span class="co"># Prevalence</span></span>
-<span id="cb16-9"><a href="#cb16-9" tabindex="-1"></a>MHcases <span class="sc">/</span> total</span></code></pre></div>
-<pre><code>## [1] 0.3819444</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="co"># prevalence is confirmed as 0.3819444</span></span>
-<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a></span>
-<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a><span class="do">## Now, we will look at prevalence of mental and physical health conditions by subgroup</span></span>
-<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a></span>
-<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a><span class="co"># Prevalence of PH by Gender</span></span>
-<span id="cb18-6"><a href="#cb18-6" tabindex="-1"></a><span class="fu">tapply</span>(merged<span class="sc">$</span>PH <span class="sc">==</span> <span class="st">&quot;Y&quot;</span>, merged<span class="sc">$</span>Gender, mean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a><span class="do">## Now, we will look at prevalence of mental and physical health conditions by subgroup</span></span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a><span class="co"># Prevalence of PH by Gender</span></span>
+<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a><span class="fu">tapply</span>(merged<span class="sc">$</span>PH <span class="sc">==</span> <span class="st">&quot;Y&quot;</span>, merged<span class="sc">$</span>Gender, mean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>##         F        GD         M      PNTS 
 ## 0.1142857 0.1428571 0.1875000 0.1250000</code></pre>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="co"># Prevalence of MH by Gender</span></span>
-<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a><span class="fu">tapply</span>(merged<span class="sc">$</span>MH <span class="sc">==</span> <span class="st">&quot;Y&quot;</span>, merged<span class="sc">$</span>Gender, mean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="co"># Prevalence of MH by Gender</span></span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a><span class="fu">tapply</span>(merged<span class="sc">$</span>MH <span class="sc">==</span> <span class="st">&quot;Y&quot;</span>, merged<span class="sc">$</span>Gender, mean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>##         F        GD         M      PNTS 
 ## 0.4285714 0.4285714 0.4062500 0.1250000</code></pre>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="co"># Prevalence of PH by Belief</span></span>
-<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a><span class="fu">tapply</span>(merged<span class="sc">$</span>PH <span class="sc">==</span> <span class="st">&quot;Y&quot;</span>, merged<span class="sc">$</span>Belief, mean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="co"># Prevalence of PH by Belief</span></span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a><span class="fu">tapply</span>(merged<span class="sc">$</span>PH <span class="sc">==</span> <span class="st">&quot;Y&quot;</span>, merged<span class="sc">$</span>Belief, mean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>##         0         1 
 ## 0.1456311 0.1951220</code></pre>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="co"># Prevalence of MH by Belief</span></span>
-<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a><span class="fu">tapply</span>(merged<span class="sc">$</span>MH <span class="sc">==</span> <span class="st">&quot;Y&quot;</span>, merged<span class="sc">$</span>Belief, mean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="co"># Prevalence of MH by Belief</span></span>
+<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a><span class="fu">tapply</span>(merged<span class="sc">$</span>MH <span class="sc">==</span> <span class="st">&quot;Y&quot;</span>, merged<span class="sc">$</span>Belief, mean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>##         0         1 
 ## 0.4271845 0.2682927</code></pre>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="co"># Prevalence of PH and MH by Age Category</span></span>
-<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a><span class="co"># Find the minimum and maximum ages of &quot;Age&quot; column </span></span>
-<span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a><span class="fu">min</span>(merged<span class="sc">$</span>Age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="co"># 1 year old</span></span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="co"># Prevalence of PH and MH by Age Category</span></span>
+<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a><span class="co"># Find the minimum and maximum ages of &quot;Age&quot; column </span></span>
+<span id="cb24-3"><a href="#cb24-3" tabindex="-1"></a><span class="fu">min</span>(merged<span class="sc">$</span>Age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="co"># 1 year old</span></span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="fu">max</span>(merged<span class="sc">$</span>Age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="co"># 97 years old </span></span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="fu">max</span>(merged<span class="sc">$</span>Age, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="co"># 97 years old </span></span></code></pre></div>
 <pre><code>## [1] 97</code></pre>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="co"># Bin the ages into 10 year categories </span></span>
-<span id="cb30-2"><a href="#cb30-2" tabindex="-1"></a>age_bins <span class="ot">&lt;-</span> <span class="fu">cut</span>(merged<span class="sc">$</span>Age,</span>
-<span id="cb30-3"><a href="#cb30-3" tabindex="-1"></a>                <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">97</span>, <span class="at">by =</span> <span class="dv">10</span>),</span>
-<span id="cb30-4"><a href="#cb30-4" tabindex="-1"></a>                <span class="at">right =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb30-5"><a href="#cb30-5" tabindex="-1"></a><span class="co"># Find the prevalence of physical health issues by age category</span></span>
-<span id="cb30-6"><a href="#cb30-6" tabindex="-1"></a><span class="fu">tapply</span>(merged<span class="sc">$</span>PH <span class="sc">==</span> <span class="st">&quot;Y&quot;</span>, age_bins, mean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="co"># Bin the ages into 10 year categories </span></span>
+<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a>age_bins <span class="ot">&lt;-</span> <span class="fu">cut</span>(merged<span class="sc">$</span>Age,</span>
+<span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a>                <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">97</span>, <span class="at">by =</span> <span class="dv">10</span>),</span>
+<span id="cb28-4"><a href="#cb28-4" tabindex="-1"></a>                <span class="at">right =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb28-5"><a href="#cb28-5" tabindex="-1"></a><span class="co"># Find the prevalence of physical health issues by age category</span></span>
+<span id="cb28-6"><a href="#cb28-6" tabindex="-1"></a><span class="fu">tapply</span>(merged<span class="sc">$</span>PH <span class="sc">==</span> <span class="st">&quot;Y&quot;</span>, age_bins, mean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>##     [1,11)    [11,21)    [21,31)    [31,41)    [41,51)    [51,61)    [61,71) 
 ## 0.07894737 0.14285714 0.18750000 0.30000000 0.17647059 0.33333333 0.21428571 
 ##    [71,81)    [81,91) 
 ## 0.11111111 0.00000000</code></pre>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="co"># Find the prevalence of mental health issues by age category</span></span>
-<span id="cb32-2"><a href="#cb32-2" tabindex="-1"></a><span class="fu">tapply</span>(merged<span class="sc">$</span>MH <span class="sc">==</span> <span class="st">&quot;Y&quot;</span>, age_bins, mean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="co"># Find the prevalence of mental health issues by age category</span></span>
+<span id="cb30-2"><a href="#cb30-2" tabindex="-1"></a><span class="fu">tapply</span>(merged<span class="sc">$</span>MH <span class="sc">==</span> <span class="st">&quot;Y&quot;</span>, age_bins, mean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>##    [1,11)   [11,21)   [21,31)   [31,41)   [41,51)   [51,61)   [61,71)   [71,81) 
 ## 0.5000000 0.4285714 0.3125000 0.3000000 0.4117647 0.2777778 0.2857143 0.3333333 
 ##   [81,91) 
@@ -2057,7 +1912,7 @@ issues were most prevalent among individuals ages 1-11 years, 11-21
 years and 41-51 years.</p>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiR2l0ICdFciBEb25lIC0gQ29uUlIgUmVwb3J0IgphdXRob3I6ICJFbGxhLCBTb3BoaWUsIGFuZCBTaW1vbmEiCmRhdGU6ICJgciBTeXMuRGF0ZSgpYCIKb3V0cHV0OiAKIGh0bWxfZG9jdW1lbnQ6CiAgICB0aGVtZTogc2ltcGxleCAKICAgIGhpZ2hsaWdodDogcHlnbWVudHMgCiAgICBjb2RlX2Rvd25sb2FkOiB0cnVlIAogICAgY29kZV9mb2xkaW5nOiBzaG93IAogICAgdG9jOiB0cnVlIAogICAgdG9jX2Zsb2F0OiB0cnVlIAotLS0KCmBgYHtyIHNldHVwLCBpbmNsdWRlPUZBTFNFfQprbml0cjo6b3B0c19jaHVuayRzZXQoZWNobyA9IFRSVUUpCmBgYAoKIyBSZXBvcnQgQWltcwojIEJpbm9taWFsIFJlZ3Jlc3Npb24gdG8gYXNzZXNzIHdoZXRoZXIgaW5kaXZpZHVhbHMgd2l0aCBvbi1nb2luZyBpc3N1ZXMgYmVsaWV2ZSB0aGVpciBjb25kaXRpb24gd2lsbCBnZXQgd29yc2Ugd2hpbGUgd2FpdGluZyBmb3IgdHJlYXRtZW50CgojIEFzc2VzcyBwcmV2YWxhbmNlIG9mIGhlYWx0aCBpc3N1ZXMgaW4gdGhlIGNvaG9ydDsgYWRqdXN0aW5nIGZvciBvdGhlciBmYWN0b3JzCgojIEFzc2VzcyBob3cgcmVwcmVzZW50YXRpdmUgdGhlIHNhbXBsZSBpcyBjb21wYXJlZCB0byB0aGUgcG9wdWxhdGlvbiAKIApgYGB7ciwgZWNobz1GQUxTRX0KIyBMb2FkIG5lY2Vzc2FyeSBwYWNrYWdlcwpsaWJyYXJ5KGhlcmUpCmxpYnJhcnkob3Blbnhsc3gpCmxpYnJhcnkoc3RyaW5ncikKbGlicmFyeShnZ3Bsb3QyKQpgYGAKCiMgMS4gRGF0YSBJbXBvcnQgCmBgYHtyfQpBIDwtIHJlYWQueGxzeChoZXJlKCJBLnhsc3giKSkKQiA8LSByZWFkLnhsc3goaGVyZSgiQi54bHN4IikpClAgPC0gcmVhZC54bHN4KGhlcmUoIlAueGxzeCIpKQpTb3V0aEVhc3QgPC0gcmVhZC54bHN4KGhlcmUoIlNvdXRoRWFzdC54bHN4IikpCkggPC0gcmVhZC54bHN4KGhlcmUoIkgueGxzeCIpKQpgYGAKCiMgMi4gRGF0YSBDbGVhbmluZyAKVGhlIGZpcnN0IHN0ZXAgd2FzIHRoZSBjb21iaW5lIGFsbCBvZiB0aGUgZGF0YXNldHMgb2YgaW50ZXJlc3Q6ICJBIiwgIkIiLCAiUCIsICJIIiwgYW5kICJTb3V0aEVhc3QuIiBUaHVzLCB0aGV5IG5lZWRlZCB0byBiZSBjbGVhbmVkIGFjY29yZGluZ2x5IHRvIGNvbnNvbGlkYXRlIGFsbCBkaWZmZXJlbmNlcyBiZXR3ZWVuIHRoZSBjb2x1bW4gbmFtZXMgYW5kIHRoZSBpbnB1dCBjYXRlZ29yaWVzIG9mIG9mIHRoZSBvYnNlcnZhdGlvbnMuICAKCmBgYHtyfQojIEN1cnJlbnQgc21va2VycyB3ZXJlIGNsYXNzaWZpZWQgYXMgIlkiIGZvciB5ZXMsIGFzIHRoZSBIIGRhdGFzZXQgZGlkIG5vdCBkaWZmZXJlbnRpYXRlIGJldHdlZW4gY3VyZW50IHNtb2tlcnMgYW5kIGlmIHRoZXkgZXZlciBzbW9rZWQuIFRoaXMgYWxsb3dlZCB1cyB0byBpbmNsdWRlIHRoZSBzbW9raW5nIHZhcmlhYmxlLiAKQSRTbW9rZXJbQSRTbW9rZXIgPT0gIkN1cnJlbnQiXSA8LSAiWSIKQiRTbW9rZXJbQiRTbW9rZXIgPT0gIkN1cnJlbnQiXSA8LSAiWSIKUCRTbW9rZXJbUCRTbW9rZXIgPT0gIkN1cnJlbnQiXSA8LSAiWSIKU291dGhFYXN0JFNtb2tlcltTb3V0aEVhc3QkU21va2VyID09ICJDdXJyZW50Il0gPC0gIlkiCgojUmVuYW1lICdQaHlzaWNhbCcgaGVhZGVyIGluIFNvdXRoRWFzdCBkdWUgdG8gbWlzc3BlbGxpbmcgYW5kIGNoYW5nZSBNZW50YWwgaGVhZGVyIHRvIE1IIApuYW1lcyhTb3V0aEVhc3QpW25hbWVzKFNvdXRoRWFzdCkgPT0gIlBodXNpY2FsIl0gPC0gIlBIIgpuYW1lcyhTb3V0aEVhc3QpW25hbWVzKFNvdXRoRWFzdCkgPT0gIk1lbnRhbCJdIDwtICJNSCIKCiMgRm9ybWF0IHRoZSBIIGRhdGFzZXQgdG8gYWdyZWUgd2l0aCB0aGUgcHJldmlvdXMgZGF0YXNldCBjb2x1bW4gbmFtZXMgCm5hbWVzKEgpW25hbWVzKEgpID09ICJQaHlzaWNhbCJdIDwtICJQSCIKbmFtZXMoSClbbmFtZXMoSCkgPT0gIk1lbnRhbCJdIDwtICJNSCIKbmFtZXMoSClbbmFtZXMoSCkgPT0gIlNtb2tpbmciXSA8LSAiU21va2VyIgoKIyBGb3JtYXQgdGhlIEggZGF0YXNldCB0byBhZ3JlZSB3aXRoIHRoZSBwcmV2aW91cyBkYXRhc2V0IGNvbHVtbiBvYmVydmF0aW9uIHJlY29yZGluZ3MgCiMgQ2hhbmdlIHNtb2tpbmcgc3RhdHVzIHRvIFkgb3IgTgpIJEJlbGllZltIJEJlbGllZiA9PSAieWVzIl0gPC0gIlkiCkgkQmVsaWVmW0gkQmVsaWVmID09ICJubyJdICA8LSAiTiIKCiMgQ2hhbmdlIG1lbnRhbCBoZWFsdGggc3RhdHVzIHRvIFkgb3IgTgpIJE1IW0gkTUggPT0gInllcyJdIDwtICJZIgpIJE1IW0gkTUggPT0gIm5vIl0gIDwtICJOIgoKIyBDaGFuZ2UgcGh5c2ljYWwgaGVhbHRoIHN0YXR1cyB0byBZIG9yIE4gCkgkUEhbSCRQSCA9PSAieWVzIl0gPC0gIlkiCkgkUEhbSCRQSCA9PSAibm8iXSAgPC0gIk4iCgojIENoYW5nZSBzbW9raW5nIHN0YXR1cyB0byBZIG9yIE4gCkgkU21va2luZ1tIJFNtb2tlciA9PSAieWVzIl0gPC0gIlkiCkgkU21va2luZ1tIJFNtb2tlciA9PSAibm8iXSAgPC0gIk4iCm5hbWVzKEgpW25hbWVzKEgpID09ICJTbW9raW5nIl0gPC0gIlNtb2tlciIKYGBgCgpGb2xsb3dpbmcgY2xlYW5pbmcsIHRoZSBpbmRpdmlkdWFsIGRhdGFzZXRzIHdlcmUgZmluYWxseSBjb21iaW5lZCB1c2luZyB0aGUgY29kZSBiZWxvdy4gVGhlIFNFUyBhbmQgcmVnaW9uIGNvbHVtbnMgd2VyZSByZW1vdmVkIGR1cmluZyB0aGlzIHByb2Nlc3MsIGFzIG5vdCBhbGwgZGF0YXNldHMgYWNjb3VudGVkIGZvciB0aGVzZSB2YXJpYWJsZXMuCmBgYHtyLCByZXN1bHRzPSdoaWRlJ30KIyBNZXJnZSBhbGwgNSBkYXRhZnJhbWVzIApjb2xzIDwtIGMoIkFnZSIsICJHZW5kZXIiLCAiUEgiLCAiTUgiLCAiQmVsaWVmIiwgIlNtb2tlciIpCkFfc3ViIDwtIEFbICwgY29sc10KQl9zdWIgPC0gQlsgLCBjb2xzXQpQX3N1YiA8LSBQWyAsIGNvbHNdCkhfc3ViIDwtIEhbICwgY29sc10KU291dGhFYXN0X3N1YiA8LSBTb3V0aEVhc3RbICwgY29sc10KCm1lcmdlZDwtIHJiaW5kKEFfc3ViLCBCX3N1YiwgUF9zdWIsIEhfc3ViKQptZXJnZWQKYGBgClRoZSBmaW5hbCBjb2x1bW5zIGluY2x1ZGVkOiAKLSAiQWdlIiBmb3IgcGFydGljaXBhbnQgYWdlIAotICJHZW5kZXIiIGZvciBwYXJ0aWNpcGFudCBnZW5kZXIgCi0gIlBIIiBmb3IgcGh5c2ljYWwgaGVhbHRoIAotICJNSCIgZm9yIG1lbnRhbCBoZWFsdGggCi0gIkJlbGllZiIgIlkiIGZvciBpZiB0aGV5IGJlbGlldmVkIGl0IHdvdWxkIGltcGFjdCB0aGVpciBvdXRjb21lIGFuZCAiWSIgaWYgbm90Ci0gIlNtb2tlciIgIlkiIGZvciBpZiB0aGV5IHdlcmUgYSBjdXJyZW50IHNtb2tlci9zbW9rZWQgYW5kICJObyIgaWYgbm90CiMgMy4gU3RhdGlzdGljYWwgQW5hbHlzaXMgCiMjIDMuMSBQcmltYXJ5IEFuYWx5c2lzClVzaW5nIHRoZSBmaW5hbCBkYXRhc2V0LCB3ZSBmaXQgYSBiaW5vbWlhbCByZWdyZXNzaW9uLiBUaGUgbW9kZWwgdXNlZCAiQmVsaWVmIiBhcyB0aGUgb3V0Y29tZSAoeSkgdmFyaWFibGUgd2hpbGUgYWRqdXN0aW5nIGZvciBBZ2UsIEdlbmRlciwgTUggLCBQSCwgYW5kIFNtb2tlci4gCgpgYGB7cn0KIyBDaGFuZ2UgQmVsaWVmIHZhcmlhYmxlIHRvIGJpbmFyeSBjb2RlIAptZXJnZWQkQmVsaWVmIDwtIGlmZWxzZShtZXJnZWQkQmVsaWVmID09ICJZIiwgMSwgMCkKbWVyZ2VkJEJlbGllZiA8LSBhcy5udW1lcmljKG1lcmdlZCRCZWxpZWYpCm1lcmdlZAoKCkJpbm9taWFsX21vZGVsIDwtIGdsbSgKICBCZWxpZWYgfiBBZ2UgKyBHZW5kZXIgKyBQSCArIE1IICsgU21va2VyLAogIGRhdGEgPSBtZXJnZWQsCiAgZmFtaWx5ID0gYmlub21pYWwKKQpzdW1tYXJ5KEJpbm9taWFsX21vZGVsKQpgYGAKV2hlbiBhZGp1c3RpbmcgZm9yIGFsbCBvZiB0aGUgaW5jbHVkZWQgY29uZm91bmRlcnMsIHRoZXJlIGlzIG5vIHNpZ25pZmljYW50IGFzc29jaWF0aW9uIGJldHdlZW4gYmVsaWVmIGFuZCBvdXRjb21lLiBBZGRpdGlvbmFsbHksIG5vbmUgb2YgdGhlIGNvbmZvdW5kZXJzIGFyZSBzaWduaWZpY2FudGx5IGFzc29jaWF0ZWQgd2l0aCBiZWxpZWYuIAojIDMuMiBTZWNvbmRhcnkgQW5hbHlzaXMKYGBge3IsIHJlc3VsdD0naGlkZSd9CiMgVG8gZGV0ZXJtaW5lIHRoZSBwcmV2YWxlbmNlIG9mIGEgaGVhbHRoIGlzc3VlIGluIHRoZSBjb2hvcnQsIHdlIGNhbGN1bGF0ZTogCiMgUHJldmFsZW5jZSA9IG51bWJlciBvZiBwZW9wbGUgd2l0aCB0aGUgY29uZGl0aW9uIMO3IHRvdGFsIG51bWJlciBvZiBwZW9wbGUgaW4gdGhlIGNvaG9ydAoKIyBQcmV2YWxlbmNlIG9mIFBICm1lYW4obWVyZ2VkJFBIID09ICJZIiwgbmEucm0gPSBUUlVFKQojIHByZXZhbGVuY2UgaXMgMC4xNTk3MjIyID0gMTUuOTclCgojIyBDaGVjayBNYW51YWxseSAKIyBOdW1iZXIgd2l0aCBjb25kaXRpb24KUEhjYXNlcyA8LSBzdW0obWVyZ2VkJFBIID09ICJZIiwgbmEucm0gPSBUUlVFKQojIFRvdGFsIGNvaG9ydCBzaXplCnRvdGFsIDwtIHN1bSghaXMubmEobWVyZ2VkJFBIKSkKIyBQcmV2YWxlbmNlClBIY2FzZXMgLyB0b3RhbAojIHByZXZhbGVuY2UgaXMgY29uZmlybWVkIGFzIDAuMTU5NzIyMgoKIyBQcmV2YWxlbmNlIG9mIE1ICm1lYW4obWVyZ2VkJE1IID09ICJZIiwgbmEucm0gPSBUUlVFKQojIHByZXZhbGVuY2UgaXMgMC4zODE5NDQ0ID0gMzguMTklCgojIyBDaGVjayBNYW51YWxseSAKIyBOdW1iZXIgd2l0aCBjb25kaXRpb24KTUhjYXNlcyA8LSBzdW0obWVyZ2VkJE1IID09ICJZIiwgbmEucm0gPSBUUlVFKQojIFRvdGFsIGNvaG9ydCBzaXplCnRvdGFsIDwtIHN1bSghaXMubmEobWVyZ2VkJE1IKSkKIyBQcmV2YWxlbmNlCk1IY2FzZXMgLyB0b3RhbAojIHByZXZhbGVuY2UgaXMgY29uZmlybWVkIGFzIDAuMzgxOTQ0NAoKIyMgTm93LCB3ZSB3aWxsIGxvb2sgYXQgcHJldmFsZW5jZSBvZiBtZW50YWwgYW5kIHBoeXNpY2FsIGhlYWx0aCBjb25kaXRpb25zIGJ5IHN1Ymdyb3VwCgojIFByZXZhbGVuY2Ugb2YgUEggYnkgR2VuZGVyCnRhcHBseShtZXJnZWQkUEggPT0gIlkiLCBtZXJnZWQkR2VuZGVyLCBtZWFuLCBuYS5ybSA9IFRSVUUpCgojIFByZXZhbGVuY2Ugb2YgTUggYnkgR2VuZGVyCnRhcHBseShtZXJnZWQkTUggPT0gIlkiLCBtZXJnZWQkR2VuZGVyLCBtZWFuLCBuYS5ybSA9IFRSVUUpCgojIFByZXZhbGVuY2Ugb2YgUEggYnkgQmVsaWVmCnRhcHBseShtZXJnZWQkUEggPT0gIlkiLCBtZXJnZWQkQmVsaWVmLCBtZWFuLCBuYS5ybSA9IFRSVUUpCgojIFByZXZhbGVuY2Ugb2YgTUggYnkgQmVsaWVmCnRhcHBseShtZXJnZWQkTUggPT0gIlkiLCBtZXJnZWQkQmVsaWVmLCBtZWFuLCBuYS5ybSA9IFRSVUUpCgojIFByZXZhbGVuY2Ugb2YgUEggYW5kIE1IIGJ5IEFnZSBDYXRlZ29yeQojIEZpbmQgdGhlIG1pbmltdW0gYW5kIG1heGltdW0gYWdlcyBvZiAiQWdlIiBjb2x1bW4gCm1pbihtZXJnZWQkQWdlLCBuYS5ybSA9IFRSVUUpICMgMSB5ZWFyIG9sZAptYXgobWVyZ2VkJEFnZSwgbmEucm0gPSBUUlVFKSAjIDk3IHllYXJzIG9sZCAKIyBCaW4gdGhlIGFnZXMgaW50byAxMCB5ZWFyIGNhdGVnb3JpZXMgCmFnZV9iaW5zIDwtIGN1dChtZXJnZWQkQWdlLAogICAgICAgICAgICAgICAgYnJlYWtzID0gc2VxKDEsIDk3LCBieSA9IDEwKSwKICAgICAgICAgICAgICAgIHJpZ2h0ID0gRkFMU0UpCiMgRmluZCB0aGUgcHJldmFsZW5jZSBvZiBwaHlzaWNhbCBoZWFsdGggaXNzdWVzIGJ5IGFnZSBjYXRlZ29yeQp0YXBwbHkobWVyZ2VkJFBIID09ICJZIiwgYWdlX2JpbnMsIG1lYW4sIG5hLnJtID0gVFJVRSkKIyBGaW5kIHRoZSBwcmV2YWxlbmNlIG9mIG1lbnRhbCBoZWFsdGggaXNzdWVzIGJ5IGFnZSBjYXRlZ29yeQp0YXBwbHkobWVyZ2VkJE1IID09ICJZIiwgYWdlX2JpbnMsIG1lYW4sIG5hLnJtID0gVFJVRSkKYGBgCldoZW4gd2UgbG9vayBhdCB0aGUgb3ZlcmFsbCBwcmV2YWxlbmNlIG9mIHBoeXNpY2FsIGFuZCBtZW50YWwgaGVhbHRoIGlzc3VlcyBpbiB0aGUgY29ob3J0LCB3ZSBmb3VuZCB0aGF0IHRoZSBwcmV2YWxlbmNlIG9mIHBoeXNpY2FsIGhlYWx0aCBpc3N1ZXMgaXMgMTUuOTclIGFuZCB0aGUgcHJldmFsZW5jZSBvZiBtZW50YWwgaGVhbHRoIGlzc3VlcyBpcyAzOC4xOSUuIENsZWFybHksIG1lbnRhbCBoZWFsdGggaXNzdWVzIGFyZSBtb3JlIGNvbW1vbiBpbiB0aGUgY29ob3J0IG92ZXJhbGwuIApXZSBkZWNpZGVkIHRvIGNob29zZSBHZW5kZXIsIEJlbGllZiwgYW5kIEFnZSBhcyB0aGUgY2F0ZWdvcmllcyBhY3Jvc3Mgd2hpY2ggd2Ugd2FudCB0byBsb29rIGF0IHRoZSBwcmV2YWxlbmNlIG9mIGhlYWx0aCBpc3N1ZXMuIEZvciBnZW5kZXIsIHdlIGZvdW5kIHRoYXQgdGhlIHByZXZhbGVuY2Ugb2YgcGh5c2ljYWwgaGVhbHRoIGlzc3VlcyB3YXMgaGlnaGVyIGluIG1hbGVzIHRoYW4gZmVtYWxlcyAoTSA9IDE4Ljc1JSwgRiA9IDExLjQzJSksIHdoZXJlYXMgdGhlIHByZXZhbGVuY2Ugb2YgbWVudGFsIGhlYWx0aCBpc3N1ZXMgd2FzIGhpZ2hlciBpbiBmZW1hbGVzIHRoYW4gbWFsZXMgKEYgPSA0Mi44NiUsIE0gPSA0MC42MyUpLiBGdXJ0aGVyIGFuYWx5c2lzIHdvdWxkIGhhdmUgdG8gYmUgZG9uZSBpbiBvcmRlciB0byBkZXRlcm1pbmUgc3RhdGlzdGljYWwgc2lnbmlmaWNhbmNlLiBGb3IgYmVsaWVmLCB3ZSBmb3VuZCB0aGF0IHBoeXNpY2FsIGhlYWx0aCBpc3N1ZXMgd2VyZSBtb3JlIHByZXZhbGVudCBpbiBwZW9wbGUgdGhhdCBiZWxpZXZlZCB0aGVpciBoZWFsdGggY29uZGl0aW9uIHdvdWxkIGdldCB3b3JzZSAoWSA9IDE5LjUxJSwgTiA9IDE0LjU2JSkuIFRoaXMgbWFrZXMgc2Vuc2UsIGFzIGJlbGllZi9hdHRpdHVkZSBpbiB0ZXJtcyBvZiBoZWFsdGggYW5kIHdlbGwtYmVpbmcgY2FuIGhhdmUgcmVhbC13b3JsZCBpbXBhY3RzLiBTdXJwcmlzaW5nbHksIHdlIGZvdW5kIHRoYXQgbWVudGFsIGhlYWx0aCBpc3N1ZXMgd2VyZSBtb3JlIHByZXZhbGVudCBpbiBwZW9wbGUgdGhhdCBkaWQgbm90IGJlbGlldmUgdGhhdCB0aGVpciBoZWFsdGggY29uZGl0aW9uIHdvdWxkIGdldCB3b3JzZSAoTiA9IDQyLjcyJSwgWSA9IDI2LjgzJSkuIEZvciBhZ2UsIHdlIGJpbm5lZCB0aGUgYWdlcyAoMS05NyB5ZWFycykgaW50byBjYXRlZ29yaWVzIG9mIDEwIHllYXJzIGVhY2guIFdlIGZvdW5kIG5vIHJlYWwgdHJlbmQgcmVsYXRpbmcgYWdlIGdyb3VwIHRvIHByZXZhbGVuY2Ugb2YgaGVhbHRoIGlzc3Vlcy4gUGh5c2ljYWwgaGVhbHRoIGlzc3VlcyB3ZXJlIG1vc3QgcHJldmFsZW50IGFtb25nIGluZGl2aWR1YWxzIGFnZXMgMzEtNDEgeWVhcnMgYW5kIDUxLTYxIHllYXJzLCB3aGVyZWFzIG1lbnRhbCBoZWFsdGggaXNzdWVzIHdlcmUgbW9zdCBwcmV2YWxlbnQgYW1vbmcgaW5kaXZpZHVhbHMgYWdlcyAxLTExIHllYXJzLCAxMS0yMSB5ZWFycyBhbmQgNDEtNTEgeWVhcnMuCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiR2l0ICdFciBEb25lIC0gQ29uUlIgUmVwb3J0IgphdXRob3I6ICJFbGxhLCBTb3BoaWUsIGFuZCBTaW1vbmEiCmRhdGU6ICJgciBTeXMuRGF0ZSgpYCIKb3V0cHV0OiAKIGh0bWxfZG9jdW1lbnQ6CiAgICB0aGVtZTogc2ltcGxleCAKICAgIGhpZ2hsaWdodDogcHlnbWVudHMgCiAgICBjb2RlX2Rvd25sb2FkOiB0cnVlIAogICAgY29kZV9mb2xkaW5nOiBzaG93IAogICAgdG9jOiB0cnVlIAogICAgdG9jX2Zsb2F0OiB0cnVlIAotLS0KCmBgYHtyIHNldHVwLCBpbmNsdWRlPUZBTFNFfQprbml0cjo6b3B0c19jaHVuayRzZXQoZWNobyA9IFRSVUUpCmBgYAoKIyBSZXBvcnQgQWltcwojIEJpbm9taWFsIFJlZ3Jlc3Npb24gdG8gYXNzZXNzIHdoZXRoZXIgaW5kaXZpZHVhbHMgd2l0aCBvbi1nb2luZyBpc3N1ZXMgYmVsaWV2ZSB0aGVpciBjb25kaXRpb24gd2lsbCBnZXQgd29yc2Ugd2hpbGUgd2FpdGluZyBmb3IgdHJlYXRtZW50CgojIEFzc2VzcyBwcmV2YWxhbmNlIG9mIGhlYWx0aCBpc3N1ZXMgaW4gdGhlIGNvaG9ydDsgYWRqdXN0aW5nIGZvciBvdGhlciBmYWN0b3JzCgojIEFzc2VzcyBob3cgcmVwcmVzZW50YXRpdmUgdGhlIHNhbXBsZSBpcyBjb21wYXJlZCB0byB0aGUgcG9wdWxhdGlvbiAKIApgYGB7ciwgZWNobz1GQUxTRX0KIyBMb2FkIG5lY2Vzc2FyeSBwYWNrYWdlcwpsaWJyYXJ5KGhlcmUpCmxpYnJhcnkob3Blbnhsc3gpCmxpYnJhcnkoc3RyaW5ncikKbGlicmFyeShnZ3Bsb3QyKQpgYGAKCiMgMS4gRGF0YSBJbXBvcnQgCmBgYHtyfQpBIDwtIHJlYWQueGxzeChoZXJlKCJBLnhsc3giKSkKQiA8LSByZWFkLnhsc3goaGVyZSgiQi54bHN4IikpClAgPC0gcmVhZC54bHN4KGhlcmUoIlAueGxzeCIpKQpTb3V0aEVhc3QgPC0gcmVhZC54bHN4KGhlcmUoIlNvdXRoRWFzdC54bHN4IikpCkggPC0gcmVhZC54bHN4KGhlcmUoIkgueGxzeCIpKQpgYGAKCiMgMi4gRGF0YSBDbGVhbmluZyAKVGhlIGZpcnN0IHN0ZXAgd2FzIHRoZSBjb21iaW5lIGFsbCBvZiB0aGUgZGF0YXNldHMgb2YgaW50ZXJlc3Q6ICJBIiwgIkIiLCAiUCIsICJIIiwgYW5kICJTb3V0aEVhc3QuIiBUaHVzLCB0aGV5IG5lZWRlZCB0byBiZSBjbGVhbmVkIGFjY29yZGluZ2x5IHRvIGNvbnNvbGlkYXRlIGFsbCBkaWZmZXJlbmNlcyBiZXR3ZWVuIHRoZSBjb2x1bW4gbmFtZXMgYW5kIHRoZSBpbnB1dCBjYXRlZ29yaWVzIG9mIG9mIHRoZSBvYnNlcnZhdGlvbnMuICAKCmBgYHtyfQojIEN1cnJlbnQgc21va2VycyB3ZXJlIGNsYXNzaWZpZWQgYXMgIlkiIGZvciB5ZXMsIGFzIHRoZSBIIGRhdGFzZXQgZGlkIG5vdCBkaWZmZXJlbnRpYXRlIGJldHdlZW4gY3VyZW50IHNtb2tlcnMgYW5kIGlmIHRoZXkgZXZlciBzbW9rZWQuIFRoaXMgYWxsb3dlZCB1cyB0byBpbmNsdWRlIHRoZSBzbW9raW5nIHZhcmlhYmxlLiAKQSRTbW9rZXJbQSRTbW9rZXIgPT0gIkN1cnJlbnQiXSA8LSAiWSIKQiRTbW9rZXJbQiRTbW9rZXIgPT0gIkN1cnJlbnQiXSA8LSAiWSIKUCRTbW9rZXJbUCRTbW9rZXIgPT0gIkN1cnJlbnQiXSA8LSAiWSIKU291dGhFYXN0JFNtb2tlcltTb3V0aEVhc3QkU21va2VyID09ICJDdXJyZW50Il0gPC0gIlkiCgojUmVuYW1lICdQaHlzaWNhbCcgaGVhZGVyIGluIFNvdXRoRWFzdCBkdWUgdG8gbWlzc3BlbGxpbmcgYW5kIGNoYW5nZSBNZW50YWwgaGVhZGVyIHRvIE1IIApuYW1lcyhTb3V0aEVhc3QpW25hbWVzKFNvdXRoRWFzdCkgPT0gIlBodXNpY2FsIl0gPC0gIlBIIgpuYW1lcyhTb3V0aEVhc3QpW25hbWVzKFNvdXRoRWFzdCkgPT0gIk1lbnRhbCJdIDwtICJNSCIKCiMgRm9ybWF0IHRoZSBIIGRhdGFzZXQgdG8gYWdyZWUgd2l0aCB0aGUgcHJldmlvdXMgZGF0YXNldCBjb2x1bW4gbmFtZXMgCm5hbWVzKEgpW25hbWVzKEgpID09ICJQaHlzaWNhbCJdIDwtICJQSCIKbmFtZXMoSClbbmFtZXMoSCkgPT0gIk1lbnRhbCJdIDwtICJNSCIKbmFtZXMoSClbbmFtZXMoSCkgPT0gIlNtb2tpbmciXSA8LSAiU21va2VyIgoKIyBGb3JtYXQgdGhlIEggZGF0YXNldCB0byBhZ3JlZSB3aXRoIHRoZSBwcmV2aW91cyBkYXRhc2V0IGNvbHVtbiBvYmVydmF0aW9uIHJlY29yZGluZ3MgCiMgQ2hhbmdlIHNtb2tpbmcgc3RhdHVzIHRvIFkgb3IgTgpIJEJlbGllZltIJEJlbGllZiA9PSAieWVzIl0gPC0gIlkiCkgkQmVsaWVmW0gkQmVsaWVmID09ICJubyJdICA8LSAiTiIKCiMgQ2hhbmdlIG1lbnRhbCBoZWFsdGggc3RhdHVzIHRvIFkgb3IgTgpIJE1IW0gkTUggPT0gInllcyJdIDwtICJZIgpIJE1IW0gkTUggPT0gIm5vIl0gIDwtICJOIgoKIyBDaGFuZ2UgcGh5c2ljYWwgaGVhbHRoIHN0YXR1cyB0byBZIG9yIE4gCkgkUEhbSCRQSCA9PSAieWVzIl0gPC0gIlkiCkgkUEhbSCRQSCA9PSAibm8iXSAgPC0gIk4iCgojIENoYW5nZSBzbW9raW5nIHN0YXR1cyB0byBZIG9yIE4gCkgkU21va2luZ1tIJFNtb2tlciA9PSAieWVzIl0gPC0gIlkiCkgkU21va2luZ1tIJFNtb2tlciA9PSAibm8iXSAgPC0gIk4iCm5hbWVzKEgpW25hbWVzKEgpID09ICJTbW9raW5nIl0gPC0gIlNtb2tlciIKYGBgCgpGb2xsb3dpbmcgY2xlYW5pbmcsIHRoZSBpbmRpdmlkdWFsIGRhdGFzZXRzIHdlcmUgZmluYWxseSBjb21iaW5lZCB1c2luZyB0aGUgY29kZSBiZWxvdy4gVGhlIFNFUyBhbmQgcmVnaW9uIGNvbHVtbnMgd2VyZSByZW1vdmVkIGR1cmluZyB0aGlzIHByb2Nlc3MsIGFzIG5vdCBhbGwgZGF0YXNldHMgYWNjb3VudGVkIGZvciB0aGVzZSB2YXJpYWJsZXMuCmBgYHtyLCByZXN1bHRzPSdoaWRlJ30KIyBNZXJnZSBhbGwgNSBkYXRhZnJhbWVzIApjb2xzIDwtIGMoIkFnZSIsICJHZW5kZXIiLCAiUEgiLCAiTUgiLCAiQmVsaWVmIiwgIlNtb2tlciIpCkFfc3ViIDwtIEFbICwgY29sc10KQl9zdWIgPC0gQlsgLCBjb2xzXQpQX3N1YiA8LSBQWyAsIGNvbHNdCkhfc3ViIDwtIEhbICwgY29sc10KU291dGhFYXN0X3N1YiA8LSBTb3V0aEVhc3RbICwgY29sc10KCm1lcmdlZDwtIHJiaW5kKEFfc3ViLCBCX3N1YiwgUF9zdWIsIEhfc3ViKQptZXJnZWQKYGBgClRoZSBmaW5hbCBjb2x1bW5zIGluY2x1ZGVkOiAKLSAiQWdlIiBmb3IgcGFydGljaXBhbnQgYWdlIAotICJHZW5kZXIiIGZvciBwYXJ0aWNpcGFudCBnZW5kZXIgCi0gIlBIIiBmb3IgcGh5c2ljYWwgaGVhbHRoIAotICJNSCIgZm9yIG1lbnRhbCBoZWFsdGggCi0gIkJlbGllZiIgIlkiIGZvciBpZiB0aGV5IGJlbGlldmVkIGl0IHdvdWxkIGltcGFjdCB0aGVpciBvdXRjb21lIGFuZCAiWSIgaWYgbm90Ci0gIlNtb2tlciIgIlkiIGZvciBpZiB0aGV5IHdlcmUgYSBjdXJyZW50IHNtb2tlci9zbW9rZWQgYW5kICJObyIgaWYgbm90CiMgMy4gU3RhdGlzdGljYWwgQW5hbHlzaXMgCiMjIDMuMSBQcmltYXJ5IEFuYWx5c2lzClVzaW5nIHRoZSBmaW5hbCBkYXRhc2V0LCB3ZSBmaXQgYSBiaW5vbWlhbCByZWdyZXNzaW9uLiBUaGUgbW9kZWwgdXNlZCAiQmVsaWVmIiBhcyB0aGUgb3V0Y29tZSAoeSkgdmFyaWFibGUgd2hpbGUgYWRqdXN0aW5nIGZvciBBZ2UsIEdlbmRlciwgTUggLCBQSCwgYW5kIFNtb2tlci4gCgpgYGB7cn0KIyBDaGFuZ2UgQmVsaWVmIHZhcmlhYmxlIHRvIGJpbmFyeSBjb2RlIAptZXJnZWQkQmVsaWVmIDwtIGlmZWxzZShtZXJnZWQkQmVsaWVmID09ICJZIiwgMSwgMCkKbWVyZ2VkJEJlbGllZiA8LSBhcy5udW1lcmljKG1lcmdlZCRCZWxpZWYpCgpCaW5vbWlhbF9tb2RlbCA8LSBnbG0oCiAgQmVsaWVmIH4gQWdlICsgR2VuZGVyICsgUEggKyBNSCArIFNtb2tlciwKICBkYXRhID0gbWVyZ2VkLAogIGZhbWlseSA9IGJpbm9taWFsCikKc3VtbWFyeShCaW5vbWlhbF9tb2RlbCkKYGBgCldoZW4gYWRqdXN0aW5nIGZvciBhbGwgb2YgdGhlIGluY2x1ZGVkIGNvbmZvdW5kZXJzLCB0aGVyZSBpcyBubyBzaWduaWZpY2FudCBhc3NvY2lhdGlvbiBiZXR3ZWVuIGJlbGllZiBhbmQgb3V0Y29tZS4gQWRkaXRpb25hbGx5LCBub25lIG9mIHRoZSBjb25mb3VuZGVycyBhcmUgc2lnbmlmaWNhbnRseSBhc3NvY2lhdGVkIHdpdGggYmVsaWVmLiAKIyAzLjIgU2Vjb25kYXJ5IEFuYWx5c2lzCmBgYHtyLCByZXN1bHQ9J2hpZGUnfQojIFRvIGRldGVybWluZSB0aGUgcHJldmFsZW5jZSBvZiBhIGhlYWx0aCBpc3N1ZSBpbiB0aGUgY29ob3J0LCB3ZSBjYWxjdWxhdGU6IAojIFByZXZhbGVuY2UgPSBudW1iZXIgb2YgcGVvcGxlIHdpdGggdGhlIGNvbmRpdGlvbiDDtyB0b3RhbCBudW1iZXIgb2YgcGVvcGxlIGluIHRoZSBjb2hvcnQKCiMgUHJldmFsZW5jZSBvZiBQSAptZWFuKG1lcmdlZCRQSCA9PSAiWSIsIG5hLnJtID0gVFJVRSkKIyBwcmV2YWxlbmNlIGlzIDAuMTU5NzIyMiA9IDE1Ljk3JQoKIyMgQ2hlY2sgTWFudWFsbHkgCiMgTnVtYmVyIHdpdGggY29uZGl0aW9uClBIY2FzZXMgPC0gc3VtKG1lcmdlZCRQSCA9PSAiWSIsIG5hLnJtID0gVFJVRSkKIyBUb3RhbCBjb2hvcnQgc2l6ZQp0b3RhbCA8LSBzdW0oIWlzLm5hKG1lcmdlZCRQSCkpCiMgUHJldmFsZW5jZQpQSGNhc2VzIC8gdG90YWwKIyBwcmV2YWxlbmNlIGlzIGNvbmZpcm1lZCBhcyAwLjE1OTcyMjIKCiMgUHJldmFsZW5jZSBvZiBNSAptZWFuKG1lcmdlZCRNSCA9PSAiWSIsIG5hLnJtID0gVFJVRSkKIyBwcmV2YWxlbmNlIGlzIDAuMzgxOTQ0NCA9IDM4LjE5JQoKIyMgQ2hlY2sgTWFudWFsbHkgCiMgTnVtYmVyIHdpdGggY29uZGl0aW9uCk1IY2FzZXMgPC0gc3VtKG1lcmdlZCRNSCA9PSAiWSIsIG5hLnJtID0gVFJVRSkKIyBUb3RhbCBjb2hvcnQgc2l6ZQp0b3RhbCA8LSBzdW0oIWlzLm5hKG1lcmdlZCRNSCkpCiMgUHJldmFsZW5jZQpNSGNhc2VzIC8gdG90YWwKIyBwcmV2YWxlbmNlIGlzIGNvbmZpcm1lZCBhcyAwLjM4MTk0NDQKCiMjIE5vdywgd2Ugd2lsbCBsb29rIGF0IHByZXZhbGVuY2Ugb2YgbWVudGFsIGFuZCBwaHlzaWNhbCBoZWFsdGggY29uZGl0aW9ucyBieSBzdWJncm91cAoKIyBQcmV2YWxlbmNlIG9mIFBIIGJ5IEdlbmRlcgp0YXBwbHkobWVyZ2VkJFBIID09ICJZIiwgbWVyZ2VkJEdlbmRlciwgbWVhbiwgbmEucm0gPSBUUlVFKQoKIyBQcmV2YWxlbmNlIG9mIE1IIGJ5IEdlbmRlcgp0YXBwbHkobWVyZ2VkJE1IID09ICJZIiwgbWVyZ2VkJEdlbmRlciwgbWVhbiwgbmEucm0gPSBUUlVFKQoKIyBQcmV2YWxlbmNlIG9mIFBIIGJ5IEJlbGllZgp0YXBwbHkobWVyZ2VkJFBIID09ICJZIiwgbWVyZ2VkJEJlbGllZiwgbWVhbiwgbmEucm0gPSBUUlVFKQoKIyBQcmV2YWxlbmNlIG9mIE1IIGJ5IEJlbGllZgp0YXBwbHkobWVyZ2VkJE1IID09ICJZIiwgbWVyZ2VkJEJlbGllZiwgbWVhbiwgbmEucm0gPSBUUlVFKQoKIyBQcmV2YWxlbmNlIG9mIFBIIGFuZCBNSCBieSBBZ2UgQ2F0ZWdvcnkKIyBGaW5kIHRoZSBtaW5pbXVtIGFuZCBtYXhpbXVtIGFnZXMgb2YgIkFnZSIgY29sdW1uIAptaW4obWVyZ2VkJEFnZSwgbmEucm0gPSBUUlVFKSAjIDEgeWVhciBvbGQKbWF4KG1lcmdlZCRBZ2UsIG5hLnJtID0gVFJVRSkgIyA5NyB5ZWFycyBvbGQgCiMgQmluIHRoZSBhZ2VzIGludG8gMTAgeWVhciBjYXRlZ29yaWVzIAphZ2VfYmlucyA8LSBjdXQobWVyZ2VkJEFnZSwKICAgICAgICAgICAgICAgIGJyZWFrcyA9IHNlcSgxLCA5NywgYnkgPSAxMCksCiAgICAgICAgICAgICAgICByaWdodCA9IEZBTFNFKQojIEZpbmQgdGhlIHByZXZhbGVuY2Ugb2YgcGh5c2ljYWwgaGVhbHRoIGlzc3VlcyBieSBhZ2UgY2F0ZWdvcnkKdGFwcGx5KG1lcmdlZCRQSCA9PSAiWSIsIGFnZV9iaW5zLCBtZWFuLCBuYS5ybSA9IFRSVUUpCiMgRmluZCB0aGUgcHJldmFsZW5jZSBvZiBtZW50YWwgaGVhbHRoIGlzc3VlcyBieSBhZ2UgY2F0ZWdvcnkKdGFwcGx5KG1lcmdlZCRNSCA9PSAiWSIsIGFnZV9iaW5zLCBtZWFuLCBuYS5ybSA9IFRSVUUpCmBgYApXaGVuIHdlIGxvb2sgYXQgdGhlIG92ZXJhbGwgcHJldmFsZW5jZSBvZiBwaHlzaWNhbCBhbmQgbWVudGFsIGhlYWx0aCBpc3N1ZXMgaW4gdGhlIGNvaG9ydCwgd2UgZm91bmQgdGhhdCB0aGUgcHJldmFsZW5jZSBvZiBwaHlzaWNhbCBoZWFsdGggaXNzdWVzIGlzIDE1Ljk3JSBhbmQgdGhlIHByZXZhbGVuY2Ugb2YgbWVudGFsIGhlYWx0aCBpc3N1ZXMgaXMgMzguMTklLiBDbGVhcmx5LCBtZW50YWwgaGVhbHRoIGlzc3VlcyBhcmUgbW9yZSBjb21tb24gaW4gdGhlIGNvaG9ydCBvdmVyYWxsLiAKV2UgZGVjaWRlZCB0byBjaG9vc2UgR2VuZGVyLCBCZWxpZWYsIGFuZCBBZ2UgYXMgdGhlIGNhdGVnb3JpZXMgYWNyb3NzIHdoaWNoIHdlIHdhbnQgdG8gbG9vayBhdCB0aGUgcHJldmFsZW5jZSBvZiBoZWFsdGggaXNzdWVzLiBGb3IgZ2VuZGVyLCB3ZSBmb3VuZCB0aGF0IHRoZSBwcmV2YWxlbmNlIG9mIHBoeXNpY2FsIGhlYWx0aCBpc3N1ZXMgd2FzIGhpZ2hlciBpbiBtYWxlcyB0aGFuIGZlbWFsZXMgKE0gPSAxOC43NSUsIEYgPSAxMS40MyUpLCB3aGVyZWFzIHRoZSBwcmV2YWxlbmNlIG9mIG1lbnRhbCBoZWFsdGggaXNzdWVzIHdhcyBoaWdoZXIgaW4gZmVtYWxlcyB0aGFuIG1hbGVzIChGID0gNDIuODYlLCBNID0gNDAuNjMlKS4gRnVydGhlciBhbmFseXNpcyB3b3VsZCBoYXZlIHRvIGJlIGRvbmUgaW4gb3JkZXIgdG8gZGV0ZXJtaW5lIHN0YXRpc3RpY2FsIHNpZ25pZmljYW5jZS4gRm9yIGJlbGllZiwgd2UgZm91bmQgdGhhdCBwaHlzaWNhbCBoZWFsdGggaXNzdWVzIHdlcmUgbW9yZSBwcmV2YWxlbnQgaW4gcGVvcGxlIHRoYXQgYmVsaWV2ZWQgdGhlaXIgaGVhbHRoIGNvbmRpdGlvbiB3b3VsZCBnZXQgd29yc2UgKFkgPSAxOS41MSUsIE4gPSAxNC41NiUpLiBUaGlzIG1ha2VzIHNlbnNlLCBhcyBiZWxpZWYvYXR0aXR1ZGUgaW4gdGVybXMgb2YgaGVhbHRoIGFuZCB3ZWxsLWJlaW5nIGNhbiBoYXZlIHJlYWwtd29ybGQgaW1wYWN0cy4gU3VycHJpc2luZ2x5LCB3ZSBmb3VuZCB0aGF0IG1lbnRhbCBoZWFsdGggaXNzdWVzIHdlcmUgbW9yZSBwcmV2YWxlbnQgaW4gcGVvcGxlIHRoYXQgZGlkIG5vdCBiZWxpZXZlIHRoYXQgdGhlaXIgaGVhbHRoIGNvbmRpdGlvbiB3b3VsZCBnZXQgd29yc2UgKE4gPSA0Mi43MiUsIFkgPSAyNi44MyUpLiBGb3IgYWdlLCB3ZSBiaW5uZWQgdGhlIGFnZXMgKDEtOTcgeWVhcnMpIGludG8gY2F0ZWdvcmllcyBvZiAxMCB5ZWFycyBlYWNoLiBXZSBmb3VuZCBubyByZWFsIHRyZW5kIHJlbGF0aW5nIGFnZSBncm91cCB0byBwcmV2YWxlbmNlIG9mIGhlYWx0aCBpc3N1ZXMuIFBoeXNpY2FsIGhlYWx0aCBpc3N1ZXMgd2VyZSBtb3N0IHByZXZhbGVudCBhbW9uZyBpbmRpdmlkdWFscyBhZ2VzIDMxLTQxIHllYXJzIGFuZCA1MS02MSB5ZWFycywgd2hlcmVhcyBtZW50YWwgaGVhbHRoIGlzc3VlcyB3ZXJlIG1vc3QgcHJldmFsZW50IGFtb25nIGluZGl2aWR1YWxzIGFnZXMgMS0xMSB5ZWFycywgMTEtMjEgeWVhcnMgYW5kIDQxLTUxIHllYXJzLgo=</div>
 
 
 </div>
