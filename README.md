@@ -18,3 +18,6 @@ Divided up tasks for analysis:
 - Workflow split up less individually because we are working on it together - would be different if we were working remotely/at different times
 - Importance of clearly commenting code for reproducibility between project teams
 - Must make sure the report contains a step-by-step plan so other teams can replicate our code and analysis 
+
+## Obstacles + Challenges 
+- using the "here()" command in read.csv(here("data", "myfile.csv")) to ensure that the differing working directories of the team members are aligned and do not need to be changed during each edit 
