@@ -1,0 +1,44 @@
+---
+title: "Workflow 12-12"
+output: html_document
+date: "2025-12-12"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+```{r}
+# Load required package
+install.packages("openxlsx")
+library(openxlsx)
+
+# Load the data
+setwd("/Users/simonahausleitner/Documents/Cambridge /ConRR/Data Sets")
+Q1_data <- read.xlsx("Q1_data.xlsx")
+
+# Inspect original values
+table(Q1_data$Sex, useNA = "ifany")
+
+# Clean Sex column 
+Q1_data$Sex <- ifelse(
+  Q1_data$Sex == "M" | Q1_data$Sex == "male" | Q1_data$Sex == "Male",
+  "Male",
+  ifelse(
+    Q1_data$Sex == "F" | Q1_data$Sex == "female" | Q1_data$Sex == "Female",
+    "Female",
+    NA
+  )
+)
+
+# Tabulate cleaned data
+table(Q1_data$Sex, useNA = "ifany")
+```
+```{r}
+# Tabulate Birth year by sex 
+Q2_data <- read.xlsx("Q2_data.xlsx")
+xtabs(DOBYear ~ Sex, data = Q2_data)
+```
+
