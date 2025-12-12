@@ -26,5 +26,5 @@ Divided up tasks for analysis:
 - Due to the time limit, we were unable to produce impactful figures, such as tables or graphs, that could have added to our analysis. 
 
 # Peer Review 
-- 45 minutes of reconstructing and replicating the other's team's work + giving constructuve feedback
+- 45 minutes of reconstructing and replicating the other's team's work + giving constructive feedback
 - 15 minutes of reflecting on our own feedback
