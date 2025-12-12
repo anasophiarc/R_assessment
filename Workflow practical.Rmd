@@ -14,10 +14,11 @@ knitr::opts_chunk$set(echo = TRUE)
 # Load required package
 install.packages("openxlsx")
 library(openxlsx)
+library(here)
 
 # Load the data
-setwd("/Users/simonahausleitner/Documents/Cambridge /ConRR/Data Sets")
-Q1_data <- read.xlsx("Q1_data.xlsx")
+
+Q1_data <- read.xlsx(here("Q1_data.xlsx"))
 
 # Inspect original values
 table(Q1_data$Sex, useNA = "ifany")
