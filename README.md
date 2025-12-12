@@ -47,3 +47,18 @@ CONS:
 - Model adjusted prevalence not well explained
 - *Understanding that there was a lack of time :) 
 
+
+# Our Work's Peer Feedback 
+- Group did a really good job presenting a clear and well-structured analysis. The use of headings, justification, and detailed comments made the work easy to follow.
+- The group also clarified the report's aims at the beginning and provided a thorough descriptive summary of the results at the end. There are proper reasons stated to support each analysis step.
+
+The things that can be better are:  
+1. During the data-wrangling process, we found that several variables had inconsistent category labels. For example, the gender variable contained multiple forms such as "f", "female", "m", and "male".
+2. The outcome variable Belief was not converted to a factor and remained in numeric form. We recommend converting all categorical variables into factors to ensure they are correctly treated in the analysis.
+
+  
+4. Regarding the prevalence, you might want to adjust for confounders using a regression model before computing the prevalence of health issues. The group solely used the age stratification and calculated the distribution in each subgroup for different variables.
+5. You might want to keep exploring the sample validation and generalisation section.
+
+Nice work overall!
+
