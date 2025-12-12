@@ -16,14 +16,163 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+# Report Aims
+# Binomial Regression to assess whether individuals with on-going issues believe their condition will get worse while waiting for treatment
+
+# Assess prevalance of health issues in the cohort; adjusting for other factors
+
+# Assess how representative the sample is compared to the population 
+ 
+```{r, echo=FALSE}
+# Load necessary packages
+library(here)
+library(openxlsx)
+library(stringr)
+library(ggplot2)
+```
+
 # 1. Data Import 
+```{r}
+A <- read.xlsx(here("A.xlsx"))
+B <- read.xlsx(here("B.xlsx"))
+P <- read.xlsx(here("P.xlsx"))
+SouthEast <- read.xlsx(here("SouthEast.xlsx"))
+H <- read.xlsx(here("H.xlsx"))
+```
 
 # 2. Data Cleaning 
+The first step was the combine all of the datasets of interest: "A", "B", "P", "H", and "SouthEast." Thus, they needed to be cleaned accordingly to consolidate all differences between the column names and the input categories of of the observations.  
 
-# 3. Data Export 
+```{r}
+# Current smokers were classified as "Y" for yes, as the H dataset did not differentiate between curent smokers and if they ever smoked. This allowed us to include the smoking variable. 
+A$Smoker[A$Smoker == "Current"] <- "Y"
+B$Smoker[B$Smoker == "Current"] <- "Y"
+P$Smoker[P$Smoker == "Current"] <- "Y"
+SouthEast$Smoker[SouthEast$Smoker == "Current"] <- "Y"
 
-# 4. Statistical Analysis 
+#Rename 'Physical' header in SouthEast due to misspelling and change Mental header to MH 
+names(SouthEast)[names(SouthEast) == "Phusical"] <- "PH"
+names(SouthEast)[names(SouthEast) == "Mental"] <- "MH"
 
-# 5. Output 
+# Format the H dataset to agree with the previous dataset column names 
+names(H)[names(H) == "Physical"] <- "PH"
+names(H)[names(H) == "Mental"] <- "MH"
+names(H)[names(H) == "Smoking"] <- "Smoker"
 
-# 6. Report Discussion 
+# Format the H dataset to agree with the previous dataset column obervation recordings 
+# Change smoking status to Y or N
+H$Belief[H$Belief == "yes"] <- "Y"
+H$Belief[H$Belief == "no"]  <- "N"
+
+# Change mental health status to Y or N
+H$MH[H$MH == "yes"] <- "Y"
+H$MH[H$MH == "no"]  <- "N"
+
+# Change physical health status to Y or N 
+H$PH[H$PH == "yes"] <- "Y"
+H$PH[H$PH == "no"]  <- "N"
+
+# Change smoking status to Y or N 
+H$Smoking[H$Smoker == "yes"] <- "Y"
+H$Smoking[H$Smoker == "no"]  <- "N"
+names(H)[names(H) == "Smoking"] <- "Smoker"
+```
+
+Following cleaning, the individual datasets were finally combined using the code below. The SES and region columns were removed during this process, as not all datasets accounted for these variables.
+```{r, results='hide'}
+# Merge all 5 dataframes 
+cols <- c("Age", "Gender", "PH", "MH", "Belief", "Smoker")
+A_sub <- A[ , cols]
+B_sub <- B[ , cols]
+P_sub <- P[ , cols]
+H_sub <- H[ , cols]
+SouthEast_sub <- SouthEast[ , cols]
+
+merged<- rbind(A_sub, B_sub, P_sub, H_sub)
+merged
+```
+The final columns included: 
+- "Age" for participant age 
+- "Gender" for participant gender 
+- "PH" for physical health 
+- "MH" for mental health 
+- "Belief" "Y" for if their  
+# 3. Statistical Analysis 
+## 3.1 Primary Analysis
+Using the final dataset, we fit a binomial regression. The model used "Belief" as the outcome (y) variable while adjusting for Age, Gender, MH , PH, 
+
+```{r}
+# Change Belief variable to binary code 
+merged$Belief <- ifelse(merged$Belief == "Y", 1, 0)
+merged$Belief <- as.numeric(merged$Belief)
+merged
+
+
+Binomial_model <- glm(
+  Belief ~ Age + Gender + PH + MH + Smoker,
+  data = merged,
+  family = binomial
+)
+summary(Binomial_model)
+```
+When adjusting for all of the included confounders, there is no significant association between belief and outcome. Additionally, none of the confounders are significantly associated with belief. 
+# 3.2 Secondary Analysis
+```{r, result='hide'}
+# To determine the prevalence of a health issue in the cohort, we calculate: 
+# Prevalence = number of people with the condition ÷ total number of people in the cohort
+
+# Prevalence of PH
+mean(merged$PH == "Y", na.rm = TRUE)
+# prevalence is 0.1597222 = 15.97%
+
+## Check Manually 
+# Number with condition
+PHcases <- sum(merged$PH == "Y", na.rm = TRUE)
+# Total cohort size
+total <- sum(!is.na(merged$PH))
+# Prevalence
+PHcases / total
+# prevalence is confirmed as 0.1597222
+
+# Prevalence of MH
+mean(merged$MH == "Y", na.rm = TRUE)
+# prevalence is 0.3819444 = 38.19%
+
+## Check Manually 
+# Number with condition
+MHcases <- sum(merged$MH == "Y", na.rm = TRUE)
+# Total cohort size
+total <- sum(!is.na(merged$MH))
+# Prevalence
+MHcases / total
+# prevalence is confirmed as 0.3819444
+
+## Now, we will look at prevalence of mental and physical health conditions by subgroup
+
+# Prevalence of PH by Gender
+tapply(merged$PH == "Y", merged$Gender, mean, na.rm = TRUE)
+
+# Prevalence of MH by Gender
+tapply(merged$MH == "Y", merged$Gender, mean, na.rm = TRUE)
+
+# Prevalence of PH by Belief
+tapply(merged$PH == "Y", merged$Belief, mean, na.rm = TRUE)
+
+# Prevalence of MH by Belief
+tapply(merged$MH == "Y", merged$Belief, mean, na.rm = TRUE)
+
+# Prevalence of PH and MH by Age Category
+# Find the minimum and maximum ages of "Age" column 
+min(merged$Age, na.rm = TRUE) # 1 year old
+max(merged$Age, na.rm = TRUE) # 97 years old 
+# Bin the ages into 10 year categories 
+age_bins <- cut(merged$Age,
+                breaks = seq(1, 97, by = 10),
+                right = FALSE)
+# Find the prevalence of physical health issues by age category
+tapply(merged$PH == "Y", age_bins, mean, na.rm = TRUE)
+# Find the prevalence of mental health issues by age category
+tapply(merged$MH == "Y", age_bins, mean, na.rm = TRUE)
+```
+When we look at the overall prevalence of physical and mental health issues in the cohort, we found that the prevalence of physical health issues is 15.97% and the prevalence of mental health issues is 38.19%. Clearly, mental health issues are more common in the cohort overall. 
+We decided to choose Gender, Belief, and Age as the categories across which we want to look at the prevalence of health issues. For gender, we found that the prevalence of physical health issues was higher in males than females (M = 18.75%, F = 11.43%), whereas the prevalence of mental health issues was higher in females than males (F = 42.86%, M = 40.63%). Further analysis would have to be done in order to determine statistical significance. For belief, we found that physical health issues were more prevalent in people that believed their health condition would get worse (Y = 19.51%, N = 14.56%). This makes sense, as belief/attitude in terms of health and well-being can have real-world impacts. Surprisingly, we found that mental health issues were more prevalent in people that did not believe that their health condition would get worse (N = 42.72%, Y = 26.83%). For age, we binned the ages (1-97 years) into categories of 10 years each. We found no real trend relating age group to prevalence of health issues. Physical health issues were most prevalent among individuals ages 31-41 years and 51-61 years, whereas mental health issues were most prevalent among individuals ages 1-11 years, 11-21 years and 41-51 years.
