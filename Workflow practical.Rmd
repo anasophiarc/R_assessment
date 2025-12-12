@@ -40,5 +40,6 @@ table(Q1_data$Sex, useNA = "ifany")
 # Tabulate Birth year by sex 
 Q2_data <- read.xlsx("Q2_data.xlsx")
 xtabs(DOBYear ~ Sex, data = Q2_data)
+
 ```
 
