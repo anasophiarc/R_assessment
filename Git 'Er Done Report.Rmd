@@ -96,10 +96,11 @@ The final columns included:
 - "Gender" for participant gender 
 - "PH" for physical health 
 - "MH" for mental health 
-- "Belief" "Y" for if their  
+- "Belief" "Y" for if they believed it would impact their outcome and "Y" if not
+- "Smoker" "Y" for if they were a current smoker/smoked and "No" if not
 # 3. Statistical Analysis 
 ## 3.1 Primary Analysis
-Using the final dataset, we fit a binomial regression. The model used "Belief" as the outcome (y) variable while adjusting for Age, Gender, MH , PH, 
+Using the final dataset, we fit a binomial regression. The model used "Belief" as the outcome (y) variable while adjusting for Age, Gender, MH , PH, and Smoker. 
 
 ```{r}
 # Change Belief variable to binary code 
